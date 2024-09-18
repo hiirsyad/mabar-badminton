@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Mabar Badminton</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="strike_text"><strike>Bimbingan Skripsi</strike></string>
+    <string name="new_player"><u>Pemain Baru?</u></string>
+</resources>

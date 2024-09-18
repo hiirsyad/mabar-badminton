@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp"
+    android:layout_marginTop="3dp"
+    android:layout_marginBottom="3dp"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="2dp"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        >
+        <ImageView
+            android:id="@+id/image_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_task_completed"
+            android:padding="5dp"
+            app:tint="@color/grey_700"
+            android:adjustViewBounds="true"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+        <TextView
+            android:id="@+id/text_task"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="Bimbingan Skripsi"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/image_check"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
+        <TextView
+            tools:visibility="visible"
+            android:visibility="gone"
+            android:id="@+id/text_grade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            tools:text="grade A"
+            android:textSize="10sp"
+            android:textColor="@color/grey_500"
+            app:drawableStartCompat="@drawable/ic_grade"
+            android:drawableTint="@color/pink_500"
+            android:drawablePadding="3dp"
+            app:layout_constraintStart_toStartOf="@+id/text_task"
+            app:layout_constraintTop_toBottomOf="@+id/text_task"
+            tools:ignore="HardcodedText,SmallSp" />
+
+        <TextView
+            android:id="@+id/text_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            tools:text="grade A"
+            android:textSize="10sp"
+            android:textColor="@color/grey_700"
+            app:drawableStartCompat="@drawable/ic_update"
+            android:drawableTint="@color/grey_500"
+            android:drawablePadding="3dp"
+            app:layout_constraintStart_toStartOf="@+id/text_task"
+            app:layout_constraintTop_toBottomOf="@+id/text_grade"
+            tools:ignore="HardcodedText,SmallSp" />
+
+        <FrameLayout
+            android:id="@+id/frame_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            >
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/img_min"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_box_min"
+                    app:tint="@color/grey_700"
+                    android:padding="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/text_count"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="12"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"
+                    android:padding="8dp"
+                    app:layout_constraintStart_toEndOf="@+id/img_min"
+                    app:layout_constraintTop_toTopOf="@+id/img_min"
+                    app:layout_constraintBottom_toBottomOf="@+id/img_min"
+                    tools:ignore="HardcodedText" />
+
+                <ImageView
+                    android:id="@+id/img_add"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/ic_box_add"
+                    app:tint="@color/grey_700"
+                    android:padding="8dp"
+                    app:layout_constraintStart_toEndOf="@+id/text_count"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </FrameLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</com.google.android.material.card.MaterialCardView>
