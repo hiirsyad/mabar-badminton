@@ -2,8 +2,7 @@ package com.lazday.mainbadminton.activity
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
+import android.os.CountDownTimer
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
@@ -16,13 +15,25 @@ class SplashActivity : AppCompatActivity() {
         setContentView(binding.root)
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         supportActionBar!!.hide()
-        Handler(Looper.myLooper()!!).postDelayed({
-            binding.imgPlayer.visibility = View.GONE
-            binding.imgLazday.visibility = View.VISIBLE
-        }, 2500)
-        Handler(Looper.myLooper()!!).postDelayed({
-            startActivity(Intent(this, HomeActivity::class.java))
-            this.finish()
-        }, 4000)
+
+        val timer = object: CountDownTimer(2500,1){
+            override fun onTick(millisUntilFinished: Long) {
+//                Log.d("onTick", "millisUntilFinished $millisUntilFinished")
+                when {
+                    millisUntilFinished < 1000L -> {
+                        binding.imgLazday.visibility = View.GONE
+                    }
+                    millisUntilFinished < 1050L -> {
+                        binding.imgPlayer.visibility = View.VISIBLE
+                    }
+                }
+            }
+            override fun onFinish() {
+                startActivity(Intent(this@SplashActivity, HomeActivity::class.java))
+                    .also { this@SplashActivity.finish() }
+            }
+        }
+        timer.start()
+
     }
 }
